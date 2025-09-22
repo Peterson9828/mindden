@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import type { Pokemon } from "~/types";
 
+useHead({
+  title: "Pokemón Detail",
+  meta: [
+    {
+      name: "description",
+      content: "Detalle de un pokemón en la Pokédex",
+    },
+  ],
+});
+
 const { params } = useRoute();
 
 const store = usePokemonStore();

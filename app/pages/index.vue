@@ -2,6 +2,16 @@
 import { DEFAULT_LIMIT } from "~/constants";
 import type { PokemonBasic } from "~/types";
 
+useHead({
+  title: "Mindden Pokemón",
+  meta: [
+    {
+      name: "description",
+      content: "Una simple Pokédex hecha con Nuxt 3 y Tailwind CSS",
+    },
+  ],
+});
+
 const store = usePokemonStore();
 const { getPokemons } = store;
 const pokemons = ref<PokemonBasic[]>();
