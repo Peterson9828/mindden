@@ -7,12 +7,11 @@ export const usePokemonStore = defineStore("pokemon", () => {
 
   async function getPokemons(offset = 0): Promise<PokemonBasic[]> {
     try {
-      const data = await $fetch(
+      const { data } = await useFetch(
         `${URL}?offset=${offset}&limit=${DEFAULT_LIMIT}`
       );
-      console.log("data", data.results);
 
-      return data.results;
+      return data.value.results;
     } catch (error) {
       console.error("Error fetching pokemons:", error);
       return [];
@@ -21,10 +20,9 @@ export const usePokemonStore = defineStore("pokemon", () => {
 
   async function getPokemon(id: string): Promise<Pokemon> {
     try {
-      const data = await $fetch(`${URL}/${id}`);
-      console.log("data", data);
+      const { data } = await useFetch(`${URL}/${id}`);
 
-      return data;
+      return data.value;
     } catch (error) {
       console.error("Error fetching pokemons:", error);
       return {} as Pokemon;
