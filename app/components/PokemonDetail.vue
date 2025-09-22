@@ -7,7 +7,9 @@ defineProps<{
 
 <template>
   <article class="rounded-xl p-4">
-    <h2 class="text-2xl font-semibold text-center">{{ pokemon.name }}</h2>
+    <h2 class="capitalize text-2xl font-semibold text-center">
+      {{ pokemon.name }}
+    </h2>
     <section class="grid grid-cols-1 sm:grid-cols-2">
       <img
         :src="pokemon.sprites.front_default"
@@ -16,10 +18,12 @@ defineProps<{
         width="250"
         height="250"
       />
+
       <div class="flex flex-col justify-center">
         <p>Altura: {{ pokemon.height }}</p>
         <p>Peso: {{ pokemon.weight }}</p>
         <p>Tipo:</p>
+
         <ul class="flex gap-2">
           <li
             v-for="type in pokemon.types"
@@ -40,7 +44,7 @@ defineProps<{
           :key="stat.stat.name"
           class="flex justify-between"
         >
-          {{ stat.stat.name }}: <span>{{ stat.base_stat }}</span>
+          {{ stat.stat.name }}: <span>{{ stat.base_stat }} pts</span>
         </li>
       </ul>
     </section>

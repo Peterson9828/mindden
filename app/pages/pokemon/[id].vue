@@ -15,7 +15,7 @@ const { params } = useRoute();
 
 const store = usePokemonStore();
 const { getPokemon } = store;
-const pokemon = ref<Pokemon>();
+const pokemon = ref<Pokemon>({} as Pokemon);
 pokemon.value = await getPokemon(params.id as string);
 </script>
 
