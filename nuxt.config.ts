@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
+    "@nuxt/test-utils/module",
   ],
   pinia: {
     storesDirs: ["./stores/**", "app/stores/**"],
